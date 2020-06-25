@@ -29,18 +29,21 @@
       }
       &__icons {
         width: 60px;
-        .icon {
+        &__cog-link {
           text-decoration: none;
-        }
-          &__cog-style {
+          &__style {
             color: #ffffff;
             float: right;
             margin-left: 5px;
           }
-          &__edit-style {
+        }
+        &__edit-link {
+          text-decoration: none;
+          &__style {
             color: #ffffff;
-            float: right;
+             float: right;
           }
+        }
       }
     }
   }
