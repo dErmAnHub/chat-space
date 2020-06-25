@@ -1,0 +1,18 @@
+.side-ber
+  .side-ber__header
+    .side-ber__header__items
+      %p.side-ber__header__items__name
+        ユーザ名
+      %p.side-ber__header__items__icons
+        =link_to "#", class: "side-ber__header__items__icons__cog-link" do
+          = icon('fas', 'cog', class: 'side-ber__header__items__icons__cog-link__style')
+        =link_to "#", class: "side-ber__header__items__icons__edit-link" do
+          = icon('far', 'edit', class: 'side-ber__header__items__icons__edit-link__style')
+
+  .side-ber__group-list
+    =link_to "#", class: "side-ber__group-list__link" do
+      %p.side-ber__group-list__link__name
+        techccamp1
+    =link_to "#", class: "side-ber__group-list__link" do
+      %p.side-ber__group-list__link__name
+        まだメッセージがありません
