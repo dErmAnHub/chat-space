@@ -1,13 +1,13 @@
 .side-ber
   .side-ber__header
     .side-ber__header__items
-      %p.side-ber__header__items__name
-        ユーザ名
+      %h3.side-ber__header__items__name
+        = current_user.name
       %p.side-ber__header__items__icons
-        =link_to "#", class: "side-ber__header__items__icons__cog-link" do
-          = icon('fas', 'cog', class: 'side-ber__header__items__icons__cog-link__style')
-        =link_to "#", class: "side-ber__header__items__icons__edit-link" do
-          = icon('far', 'edit', class: 'side-ber__header__items__icons__edit-link__style')
+        =link_to edit_user_path(current_user) do
+          = icon('fas', 'cog', class: 'side-ber__header__items__icons__style')
+        =link_to "#" do
+          = icon('far', 'edit', class: 'side-ber__header__items__icons__style')
 
   .side-ber__group-list
     =link_to "#", class: "side-ber__group-list__link" do

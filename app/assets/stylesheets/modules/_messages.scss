@@ -29,20 +29,10 @@
       }
       &__icons {
         width: 60px;
-        &__cog-link {
-          text-decoration: none;
-          &__style {
-            color: #ffffff;
-            float: right;
-            margin-left: 5px;
-          }
-        }
-        &__edit-link {
-          text-decoration: none;
-          &__style {
-            color: #ffffff;
-             float: right;
-          }
+        &__style {
+          color: #ffffff;
+          float: right;
+          margin-left: 5px;
         }
       }
     }
