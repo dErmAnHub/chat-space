@@ -2,34 +2,25 @@
   .chat-main__header
     .chat-main__header__left-item
       .chat-main__header__left-item__group-name
-        グループ名
+        = @group.name
       %ul.chat-main__header__left-item__member-list
         Member : 
-        %li.chat-main__header__left-item__member-list__user-name
-          ユーザ名1
+        - @group.users.each do |user|
+          %li.chat-main__header__left-item__member-list__user-name
+            = user.name
 
-    = link_to "#", class: "chat-main__header__btn-link" do
+    = link_to edit_group_path(@group), class: "chat-main__header__btn-link" do
       .edit-botton
         Edit
 
   .chat-main__message-list
-    .chat-main__message-list__items
-      %ul.chat-main__message-list__items__headder
-        %li.chat-main__message-list__items__headder__user-name
-          ユーザ名1
-        %li.chat-main__message-list__items__headder__time-stamp
-          2020/06/22(Mon)17:43:01
+    = render @messages
 
-      .chat-main__message-list__items__messages
-        おはよう
-
-  .chat-main__message-form
-    .chat-main__message-form__block
-      %input.chat-main__message-form__block__text-area{type: "text", placeholder: "type a message"}
-      %label{class: "chat-main__message-form__block__file-label"}
-        = icon('far', 'image', class: "chat-main__message-form__block__file-label__icon-style")
-        %input{type: "file", class: "chat-main__message-form__block__file-label__btn-input"}
-
-    = link_to "#", class: "chat-main__message-form__btn-link" do
-      .chat-main__message-form__btn-link__submit-btn
-        Send
+  = form_for [@group, @message] do |f|
+    .chat-main__message-form
+      .chat-main__message-form__mask
+        = f.text_field :content, class: 'chat-main__message-form__mask__text-area', placeholder: 'type a message'
+        = f.label :image, class: 'chat-main__message-form__mask__file-label' do
+          = icon('far', 'image', class: 'chat-main__message-form__mask__file-label__icon-style')
+          = f.file_field :image, class: 'chat-main__message-form__mask__file-label__btn-input'
+      = f.submit 'Send', class: 'chat-main__message-form__submit-btn'
