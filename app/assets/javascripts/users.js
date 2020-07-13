@@ -31,7 +31,7 @@ $(function(){
 
   function addMember(userId){
     var html = `<input value="${userId}" name="group[user_ids][]" type="hidden" id="group_user_ids_${userId}" />`;
-    $('#${userId}').append(html);
+    $(`#${userId}`).append(html);
   }
 
   $('#user-search-field').on("keyup", function(){
