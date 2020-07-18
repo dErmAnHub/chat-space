@@ -36,10 +36,8 @@ set :rbenv_ruby,  '2.5.1'
 # Default value for local_user is ENV['USER']
 # set :local_user, -> { `git config user.name`.chomp }
 
-set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
-
 # Default value for keep_releases is 5
-set :keep_releases, 5
+# set :keep_releases, 5
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 set :ssh_options, auth_methods: ['publickey'],
