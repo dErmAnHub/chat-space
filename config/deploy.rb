@@ -33,10 +33,10 @@ set :application, "chat-space"
 
 set :repo_url, "git@github.com:dErmAnHub/chat-space.git"
 
-set :linked_dirs, fetch(:linked_dirs. []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
 set :rbenv_type, :user
-set :rbenv_ruby,  '2.5.1'
+set :rbenv_ruby, '2.5.1'
 
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 
